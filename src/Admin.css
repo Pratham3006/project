@@ -1,0 +1,75 @@
+
+    
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+*{
+    font-family: 'Poppins', sans-serif;
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+
+}
+.Admin{
+    background: url(./test_3.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    
+}
+.wrapper{
+    display: flex;
+    justify-content: center;
+   
+    min-height: 120vh;
+}
+.Heading{
+    border: 2px solid black;
+    text-align: center;
+    justify-content: center;
+    position: sticky;
+
+}
+
+.login1{
+    border: 3px solid black;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    margin: 120px;
+    background-color:#e68fee;
+    position: relative;
+    left: 30px;
+}
+.User{
+    padding: 20px;
+   
+
+}
+.User input{
+    margin: 20px;
+}
+.text_login b{
+    text-align: center;
+    color: rgb(0, 0, 0);
+}
+.input_field{
+    padding: 12px;
+    border-radius: 10px;
+}
+.Submit{
+    text-align: center;
+}
+.Submit button:hover{
+    border-radius: 20px;
+    background-color: rgb(196, 194, 42);
+}
+
+
+    
+
+
+
+
+
