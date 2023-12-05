@@ -1,18 +1,23 @@
 import React, { useState } from 'react';
 import './lawyer.css';
 import { signInWithEmailAndPassword } from 'firebase/auth';
+import { useNavigate } from 'react-router-dom';
 import { auth } from './firebase';
+
 
 export default function Lawyer() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const navigate=useNavigate();
 
   const handleLogin = async () => {
     // Check if the email ends with "@law.com" for lawyer access
     if (email.endsWith('@law.com')) {
       try {
         await signInWithEmailAndPassword(auth, email, password);
-        alert('Login successful!'); // Display a pop-up message for successful login
+        alert('Login successful!');
+        navigate('/lawyerLogin')
+         
       } catch (error) {
         alert('Login failed. Please check your credentials.'); // Display a pop-up message for failed login
       }

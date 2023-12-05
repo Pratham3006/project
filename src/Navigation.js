@@ -16,6 +16,9 @@ function Navigation() {
       <li>
         <Link to="/Home">Home</Link>
       </li>
+      <li>
+        <Link to="/lawyerLogin">LoginUi</Link>
+      </li>
     </ul>
   );
 }

@@ -1,6 +1,7 @@
 import React, { useRef, useState } from 'react';
-import { createUserWithEmailAndPassword, getAuth } from 'firebase/auth';
-import { auth } from './firebase';
+import { createUserWithEmailAndPassword, getAuth, updateProfile } from 'firebase/auth';
+import { auth, database } from './firebase'; // Assuming you have exported the 'database' object from your 'firebase.js' file
+import { set, ref } from 'firebase/database';
 import './Admin.css';
 import { useNavigate } from 'react-router-dom';
 
@@ -29,13 +30,26 @@ export default function Admin() {
       return;
     }
 
-    const auth = getAuth();
-    
+    const authInstance = getAuth();
+
     try {
-      await createUserWithEmailAndPassword(auth, email, password);
+      const userCredential = await createUserWithEmailAndPassword(authInstance, email, password);
+
+      // Access the user object from the userCredential
+      const user = userCredential.user;
+
+      // Update the user's display name
+      await updateProfile(user, {
+        displayName: `${name} ${secondName}`,
+      });
+
+      // Save additional user data to the database
+      await saveUserDataToDatabase(user.uid, { name, secondName, lawyerId });
+
       setSuccess(true);
       setError(null);
 
+      // Clear input fields
       nameRef.current.value = '';
       secondNameRef.current.value = '';
       emailRef.current.value = '';
@@ -43,6 +57,7 @@ export default function Admin() {
       confirmPasswordRef.current.value = '';
       lawyerIdRef.current.value = '';
 
+      // Redirect to home page after successful registration
       setTimeout(() => {
         navigate('/');
       }, 2000);
@@ -58,6 +73,16 @@ export default function Admin() {
           setError('Error signing up. Please try again.');
       }
       setSuccess(false);
+    }
+  };
+
+  const saveUserDataToDatabase = async (userId, userData) => {
+    // Replace this with your database logic
+    try {
+      await set(ref(database, `users/${userId}`), userData);
+      console.log('User data saved to the database:', userData);
+    } catch (error) {
+      console.error('Error saving user data to the database:', error);
     }
   };
 

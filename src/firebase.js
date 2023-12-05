@@ -1,9 +1,11 @@
 import { getAuth } from "firebase/auth";
 import { initializeApp } from "firebase/app";
+import {getDatabase} from "firebase/database"
 
 const firebaseConfig = {
   apiKey: "AIzaSyASNKt9zfWBIVrg2SQMYxu1yvchIvUQRvo",
   authDomain: "sihauth-3ac2d.firebaseapp.com",
+  databaseURL: "https://sihauth-3ac2d-default-rtdb.firebaseio.com",
   projectId: "sihauth-3ac2d",
   storageBucket: "sihauth-3ac2d.appspot.com",
   messagingSenderId: "591287760902",
@@ -12,6 +14,8 @@ const firebaseConfig = {
 };
 
 const app = initializeApp(firebaseConfig);
-const auth = getAuth(app); // Initialize the auth object with the app
+const auth = getAuth(app); 
+const database = getDatabase(app);
+// Initialize the auth object with the app
 
-export { auth, app };
+export { auth, app,database };
