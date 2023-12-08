@@ -59,14 +59,14 @@ export default function Judge() {
                 </a>
               </li>
               <li>
-                <a href="#" className="link">
+                <a href="/faq's/govern" className="link">
                   FAQ's
                 </a>
               </li>
             </ul>
           </div>
           <div className="nav-button">
-            <button className="button">Sign up</button>
+            <button className="button">Forgot Your Password?</button>
           </div>
         </nav>
         <div className="login">

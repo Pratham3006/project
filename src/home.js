@@ -39,7 +39,7 @@ function home() {
           <p>About us</p>
         </div>
         <div className="text">
-          <p>News</p>
+         <Link to="/faq's">Faq's</Link>
         </div>
         <div className="text">
           <p>Installation</p>
