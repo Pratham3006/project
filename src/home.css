@@ -10,8 +10,8 @@
 .Navbar9{
     background-color:#f5e2c8;
     border: 3px solid rgb(8, 8, 8);
-    width: auto;
     display: flex;
+    justify-content: space-between;
 }
 .Navbar9 img{
     position: relative;

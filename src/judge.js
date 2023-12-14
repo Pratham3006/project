@@ -44,7 +44,7 @@ export default function Judge() {
           <div className="menu">
             <ul>
               <li>
-                <a href="#" className="link">
+                <a href="/" className="link">
                   Home
                 </a>
               </li>

@@ -22,6 +22,9 @@ function Navigation() {
       <li>
         <Link to="/faq's">LoginUi</Link>
       </li>
+      <li>
+        <Link to="/ReleaseNotes">LoginUi</Link>
+      </li>
     </ul>
   );
 }

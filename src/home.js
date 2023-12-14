@@ -33,16 +33,16 @@ function home() {
           <img src={logo} alt="" />
         </div>
         <div className="text">
-          <p>Home</p>
+        <Link to="/"><p>Home</p></Link>
         </div>
         <div className="text">
-          <p>About us</p>
+        <Link to="/AboutUs"><p>About Us</p></Link>
         </div>
         <div className="text">
-         <Link to="/faq's">Faq's</Link>
+         <Link to="/faq's"><p>Faq's</p></Link>
         </div>
         <div className="text">
-          <p>Installation</p>
+            <Link to="/ReleaseNotes"><p>Release Notes</p></Link>
         </div>
         <div className="text">
           <p>Mentions</p>
